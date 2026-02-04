@@ -74,6 +74,7 @@ def delete_entry(date):
 
 if __name__ == '__main__':
     init_db()
-    print("🚀 Сервер запущен на http://localhost:5000")
+    port = int(os.environ.get('PORT', 5000))
+    print(f"🚀 Сервер запущен на порту {port}")
     print("📊 База данных: work_hours.db")
-    app.run(debug=True, host='0.0.0.0', port=5000)
+    app.run(debug=False, host='0.0.0.0', port=port)
